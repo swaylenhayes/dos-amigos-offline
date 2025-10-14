@@ -18,11 +18,11 @@ Two powerful amigos for automatic speech recognition! Run push-to-talk, auto-pas
 
 ### Setup
 1. Due to GitHub's 2GB limit, download both parts:
-1. 📦 dos-amigos-offline-v1.0.zip.partaa
-2. 📦 dos-amigos-offline-v1.0.zip.partab
-3. Combine both parts `cat dos-amigos-offline-v1.0.zip.part* > dos-amigos-offline-v1.0.zip`
-4. Extract `unzip dos-amigos-offline-v1.0.zip`
-5. Change directories `cd dos-amigos-offline-v1.0`
+1. 📦 dos-amigos-offline-v1.1.zip.partaa
+2. 📦 dos-amigos-offline-v1.1.zip.partab
+3. Combine both parts `cat dos-amigos-offline-v1.1.zip.part* > dos-amigos-offline-v1.1.zip`
+4. Extract `unzip dos-amigos-offline-v1.1.zip`
+5. Change directories `cd dos-amigos-offline-v1.1`
 6. Run `uv run python src/scripts/setup_offline.py`
 7. Activate `source .venv/bin/activate`
 7. Run `uv run python src/dos_amigos.py`
