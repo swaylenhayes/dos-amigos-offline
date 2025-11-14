@@ -284,13 +284,18 @@ class DosAmigos:
     def transcribe_with_parakeet(self, audio_path):
         """Transcribe using Parakeet MLX"""
         result = self.model.transcribe(audio_path)
-        
+
         if hasattr(result, 'text'):
-            return result.text.strip()
+            text = result.text.strip()
         elif hasattr(result, 'sentences'):
-            return ' '.join(result.sentences).strip()
+            text = ' '.join(result.sentences).strip()
         else:
-            return str(result).strip()
+            text = str(result).strip()
+
+        # Remove filler words like 'um' from the transcription
+        text = self.remove_filler_words(text)
+
+        return text
     
     def transcribe_with_whisper(self, audio_path):
         """Transcribe using Whisper MLX"""
@@ -353,7 +358,21 @@ class DosAmigos:
             import traceback
             traceback.print_exc()
             return ""
-    
+
+    def remove_filler_words(self, text):
+        """Remove filler words like 'um' from transcription"""
+        import re
+
+        # Remove 'um' as a standalone word (case-insensitive)
+        # This pattern matches 'um' with word boundaries to avoid removing 'um' from words like 'umbrella'
+        text = re.sub(r'\b[Uu]m\b', '', text)
+
+        # Clean up multiple spaces left after removal
+        text = re.sub(r'\s+', ' ', text)
+
+        # Strip leading/trailing whitespace
+        return text.strip()
+
     def paste_text(self, text):
         """Paste text to the current application using clipboard"""
         try:
