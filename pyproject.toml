@@ -1,0 +1,7 @@
+[project]
+name = "dos-amigos-offline"
+version = "1.2.0"
+description = "Offline dual-model speech-to-text assistant for macOS"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
