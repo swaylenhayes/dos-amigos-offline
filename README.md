@@ -23,7 +23,7 @@ Three powerful amigos for automatic speech recognition! Run push-to-talk, auto-p
 ## 🚀 Download and Setup Instructions
 
 ### Download
-👉 [Download from releases](https://github.com/laywen-sashe/three-amigos-offline/releases).
+👉 [Download from releases](https://github.com/swaylenhayes/three-amigos-offline/releases).
 
 ### Setup
 1. Due to GitHub's 2GB limit, download all parts:
